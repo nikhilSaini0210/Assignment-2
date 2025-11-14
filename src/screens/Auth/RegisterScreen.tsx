@@ -19,6 +19,7 @@ import { ACCESS_TOKEN_KEY, endPoints } from '../../api/config';
 import StorageService from '../../service/storage.service';
 import { showAlert } from '../../utils/AlertUtil';
 import { hp, wp } from '../../scale/responsive';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const RegisterScreen: FC = () => {
   const [fistName, setFisrtName] = useState('');
@@ -173,8 +174,10 @@ const RegisterScreen: FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         keyboardVerticalOffset={Platform.OS === 'ios' ? 70 : 0}
       >
-        <ScrollView
+        <KeyboardAwareScrollView
           contentContainerStyle={styles.scrollContainer}
+          enableOnAndroid={true}
+          extraScrollHeight={60}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
@@ -241,7 +244,7 @@ const RegisterScreen: FC = () => {
               containerStyle={styles.account}
             />
           </View>
-        </ScrollView>
+        </KeyboardAwareScrollView>
       </KeyboardAvoidingView>
     </CustomSafeAreaView>
   );

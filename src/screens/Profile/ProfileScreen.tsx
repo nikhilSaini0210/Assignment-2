@@ -116,7 +116,7 @@ const ProfileScreen: FC = () => {
               <ProfileField
                 label="First Name"
                 value={userData?.first_name}
-                icon="user"
+                icon="person"
               />
             )}
 
@@ -124,7 +124,7 @@ const ProfileScreen: FC = () => {
               <ProfileField
                 label="Last Name"
                 value={userData?.last_name}
-                icon="user-check"
+                icon="person"
               />
             )}
 
@@ -136,7 +136,7 @@ const ProfileScreen: FC = () => {
               <ProfileField
                 label="Mobile Number"
                 value={userData?.mobile_number}
-                icon="phone"
+                icon="keypad-outline"
               />
             )}
           </Animated.View>

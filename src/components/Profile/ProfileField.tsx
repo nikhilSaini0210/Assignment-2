@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from '../global/Icon';
 
 interface Props {
   label: string;
@@ -11,7 +11,7 @@ interface Props {
 const ProfileField: FC<Props> = ({ label, value, icon }) => {
   return (
     <View style={styles.container}>
-      <Icon name={icon} size={20} color="#0B1F4A" />
+      <Icon iconFamily='Ionicons' name={icon} size={20} color="#0B1F4A" />
       <View style={{ marginLeft: 12 }}>
         <Text style={styles.label}>{label}</Text>
         <Text style={styles.value}>{value}</Text>

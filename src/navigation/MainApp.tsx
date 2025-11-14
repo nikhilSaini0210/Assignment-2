@@ -51,52 +51,13 @@ const screenOptions = ({
   ),
 });
 
-const HomeStatus: FC = () => {
-  return (
-    <>
-      <StatusBar
-        backgroundColor={colors.mainBg}
-        barStyle="dark-content"
-        translucent={true}
-      />
-      <HomeScreen />
-    </>
-  );
-};
-
-const DefaultStatus: FC = () => {
-  return (
-    <>
-      <StatusBar
-        backgroundColor={colors.mainBg}
-        barStyle="dark-content"
-        translucent={true}
-      />
-      <DefaultScreen />
-    </>
-  );
-};
-
-const ProfileStatus: FC = () => {
-  return (
-    <>
-      <StatusBar
-        backgroundColor={colors.primaryText}
-        barStyle="light-content"
-        translucent={true}
-      />
-      <ProfileScreen />
-    </>
-  );
-};
-
 const MainApp: FC = () => (
   <Tab.Navigator screenOptions={screenOptions}>
-    <Tab.Screen name={Routes.Home} component={HomeStatus} />
-    <Tab.Screen name={Routes.Default} component={DefaultStatus} />
-    <Tab.Screen name={Routes.DefaultB} component={DefaultStatus} />
-    <Tab.Screen name={Routes.DefaultC} component={DefaultStatus} />
-    <Tab.Screen name={Routes.Profile} component={ProfileStatus} />
+    <Tab.Screen name={Routes.Home} component={HomeScreen} />
+    <Tab.Screen name={Routes.Default} component={DefaultScreen} />
+    <Tab.Screen name={Routes.DefaultB} component={DefaultScreen} />
+    <Tab.Screen name={Routes.DefaultC} component={DefaultScreen} />
+    <Tab.Screen name={Routes.Profile} component={ProfileScreen} />
   </Tab.Navigator>
 );
 
