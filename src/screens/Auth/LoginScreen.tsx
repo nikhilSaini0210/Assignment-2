@@ -80,6 +80,8 @@ const LoginScreen: FC = () => {
         data: data,
       });
 
+      console.log(response)
+
       if (response?.data.success) {
         const { message } = response?.data;
         const { token, user } = response?.data?.data;

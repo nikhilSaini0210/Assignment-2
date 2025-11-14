@@ -43,7 +43,7 @@ export default TouchableText;
 const styles = StyleSheet.create({
   label: {
     fontFamily: Fonts.PoppinsMedium,
-    fontSize: rf(14),
+    fontSize: rf(10),
     color: colors.secondaryText,
     textAlign: 'center',
   },
