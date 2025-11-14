@@ -6,7 +6,7 @@ import { colors } from '../../styles/colors';
 
 const DefaultScreen: FC = () => {
   return (
-    <CustomSafeAreaView dismissKeyboard={false}>
+    <CustomSafeAreaView>
       <View style={styles.conatiner}>
         <Text style={styles.text}>Coming Soon...</Text>
       </View>

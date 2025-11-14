@@ -66,7 +66,7 @@ const ProfileScreen: FC = () => {
     ]).start(() => {
       getUser();
     });
-  }, []);
+  }, [fadeAnim, getUser, slideAnim]);
 
   const onLogout = async () => {
     showAlert({
@@ -83,7 +83,7 @@ const ProfileScreen: FC = () => {
   };
 
   return (
-    <CustomSafeAreaView dismissKeyboard={false} style={styles.container}>
+    <CustomSafeAreaView style={styles.container}>
       <ProfileHeader fadeAnim={fadeAnim} slideAnim={slideAnim} />
 
       {loading ? (
@@ -136,7 +136,7 @@ const ProfileScreen: FC = () => {
               <ProfileField
                 label="Mobile Number"
                 value={userData?.mobile_number}
-                icon="keypad-outline"
+                icon="keypad"
               />
             )}
           </Animated.View>

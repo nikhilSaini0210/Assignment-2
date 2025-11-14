@@ -7,7 +7,7 @@ import { Routes } from './Routes';
 import HomeScreen from '../screens/Home/HomeScreen';
 import TabBarIcon from './TabBarIcon';
 import DefaultScreen from '../screens/Default/DefaultScreen';
-import { Dimensions, Platform, StatusBar } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 import { hp, wp } from '../scale/responsive';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 

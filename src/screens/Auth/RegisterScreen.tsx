@@ -1,7 +1,4 @@
 import {
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
   StyleSheet,
   View,
 } from 'react-native';
@@ -168,12 +165,7 @@ const RegisterScreen: FC = () => {
   };
 
   return (
-    <CustomSafeAreaView dismissKeyboard={true}>
-      <KeyboardAvoidingView
-        style={styles.flex}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 70 : 0}
-      >
+    <CustomSafeAreaView>
         <KeyboardAwareScrollView
           contentContainerStyle={styles.scrollContainer}
           enableOnAndroid={true}
@@ -245,7 +237,6 @@ const RegisterScreen: FC = () => {
             />
           </View>
         </KeyboardAwareScrollView>
-      </KeyboardAvoidingView>
     </CustomSafeAreaView>
   );
 };
@@ -255,7 +246,6 @@ export default RegisterScreen;
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-    justifyContent: 'center',
     paddingBottom: hp(3),
   },
   flex: {

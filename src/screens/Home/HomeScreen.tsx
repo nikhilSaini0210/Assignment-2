@@ -28,7 +28,7 @@ const HomeScreen:FC = () => {
   };
 
   return (
-    <CustomSafeAreaView dismissKeyboard={false}>
+    <CustomSafeAreaView>
       <HomeHeader />
 
       <View style={styles.tabsContainer}>

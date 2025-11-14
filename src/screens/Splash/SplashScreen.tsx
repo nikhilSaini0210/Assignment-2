@@ -4,14 +4,18 @@ import { navigate, resetAndNavigate } from '../../utils/NavigationUtil';
 import { Routes } from '../../navigation/Routes';
 import { colors } from '../../styles/colors';
 import StorageService from '../../service/storage.service';
-import { ACCESS_TOKEN_KEY, HAS_VISITED_TO_ONBOARDING, setAppInitializing } from '../../api/config';
+import {
+  ACCESS_TOKEN_KEY,
+  HAS_VISITED_TO_ONBOARDING,
+  setAppInitializing,
+} from '../../api/config';
 import Logo from '../../components/Logo/Logo';
 
 const SplashScreen: FC = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(40)).current;
 
-  const checkUserLogin = async () => {
+  const checkUserLogin = useCallback(async () => {
     try {
       const { success, data: token } = await StorageService.getItem(
         ACCESS_TOKEN_KEY,
@@ -25,7 +29,7 @@ const SplashScreen: FC = () => {
       console.log('Splash check error:', error);
       resetAndNavigate(Routes.Login);
     }
-  };
+  }, []);
 
   const initializeApp = useCallback(async () => {
     try {
@@ -49,7 +53,6 @@ const SplashScreen: FC = () => {
     }
   }, [checkUserLogin]);
 
-
   useEffect(() => {
     Animated.parallel([
       Animated.timing(fadeAnim, {
@@ -63,9 +66,9 @@ const SplashScreen: FC = () => {
         useNativeDriver: true,
       }),
     ]).start(() => {
-     initializeApp()
+      initializeApp();
     });
-  }, []);
+  }, [fadeAnim, initializeApp, slideAnim]);
 
   return (
     <View style={styles.container}>

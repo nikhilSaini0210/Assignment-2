@@ -117,7 +117,7 @@ const LoginScreen: FC = () => {
   };
 
   return (
-    <CustomSafeAreaView dismissKeyboard>
+    <CustomSafeAreaView>
       <KeyboardAvoidingView
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
