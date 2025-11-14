@@ -7,12 +7,14 @@ import { Fonts } from '../../styles/fonts';
 const HomeHeader: React.FC = () => {
   return (
     <View style={styles.header}>
-      <Icon
-        iconFamily="Ionicons"
-        name="grid-outline"
-        size={28}
-        color={colors.primaryText}
-      />
+      <View style={styles.gridContainer}>
+        <Icon
+          iconFamily="Ionicons"
+          name="grid-outline"
+          size={20}
+          color={colors.primaryText}
+        />
+      </View>
 
       <Text style={styles.headerTitle}>Activity</Text>
 
@@ -59,6 +61,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 16,
+  },
+  gridContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    width: 40,
+    height: 40,
+    borderWidth: 2,
+    borderColor: colors.green,
   },
   notification: {
     position: 'relative',
