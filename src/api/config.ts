@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'http://testlink4.pillersofttechnologies.com/api';
+export const API_BASE_URL = 'https://testlink4.pillersofttechnologies.com/api';
 
 export const TIMEOUT = 30000;
 
